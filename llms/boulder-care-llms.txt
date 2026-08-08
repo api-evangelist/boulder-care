@@ -1,0 +1,79 @@
+# Boulder Care
+
+> Boulder Care is a Portland, Oregon telehealth provider founded in 2017 by Stephanie
+> Strong, delivering evidence-based outpatient treatment for opioid and alcohol use
+> disorder entirely through a mobile app. Participants connect to a collaborative care
+> team — addiction medicine clinicians, peer recovery specialists and care coordinators —
+> over secure video and messaging, and are prescribed medications for addiction treatment
+> including buprenorphine/naloxone, naltrexone and acamprosate. The company focuses on
+> Medicaid beneficiaries and other historically underserved populations and has served
+> more than 12,000 participants. Boulder Care ships software only as an end-user patient
+> product: there is no developer portal, no API documentation, no SDK and no
+> machine-readable specification anywhere on its public surface. This file is generated
+> by API Evangelist from public sources; it is not published by Boulder Care.
+
+## API surface
+
+- **None published.** Boulder Care markets no API. Its sitemap (156 URLs) contains no
+  developer, docs, API or integration page, and `/developers`, `/developer`, `/api`,
+  `/docs` and `/api-docs` all return HTTP 404.
+- One real machine API exists and was found by probe, but is undocumented: an Apollo
+  GraphQL server at the root of `https://api.boulder.care/`. It executes GraphQL for an
+  unauthenticated caller (`{__typename}` returns `{"data":{"__typename":"Query"}}`), but
+  **introspection is disabled** (`INTROSPECTION_DISABLED`), so no schema can be read. It
+  is the backend for the Boulder Care patient mobile app, not a product API. No SDL was
+  captured and none was invented.
+- `app.boulder.care` is a Branch.io deep-link host for the mobile app. It answers HTTP
+  200 with the same HTML interstitial for every path, including every `/.well-known/*`
+  and spec path — those 200s are soft-404s, not documents.
+
+## Care and services
+
+- [Services](https://www.boulder.care/services)
+- [Suboxone / buprenorphine-naloxone](https://www.boulder.care/suboxone-naloxone-buprenorphine)
+- [Revia (naltrexone)](https://www.boulder.care/revia-naltrexone)
+- [Vivitrol (naltrexone)](https://www.boulder.care/vivitrol-naltrexone)
+- [Campral (acamprosate)](https://www.boulder.care/campral-acamprosate)
+- [Shared decision making](https://www.boulder.care/shared-decision-making)
+- [Adolescents](https://www.boulder.care/adolescents)
+- [Friends and family](https://www.boulder.care/friends-and-family)
+- [Crisis helplines](https://www.boulder.care/crisis-helplines)
+- [Language support](https://www.boulder.care/language-support)
+
+## Company
+
+- [Website](https://www.boulder.care/)
+- [About](https://www.boulder.care/about)
+- [Partners — health plans, health systems, employers, referral partners](https://www.boulder.care/partners)
+- [Business inquiries](https://www.boulder.care/business-inquiries)
+- [Blog](https://www.boulder.care/blog)
+- [Careers](https://www.boulder.care/careers)
+- [Contact](https://www.boulder.care/contact)
+- [GitHub organization](https://github.com/bouldercare) — 14 public repositories, all
+  forks of third-party libraries. No first-party SDK, client library or specification.
+
+## Access
+
+- [Get started](https://www.boulder.care/get-started)
+- [Eligibility and insurance](https://www.boulder.care/eligibility-and-insurance)
+- [Self-pay options](https://www.boulder.care/self-pay)
+- [Support](https://www.boulder.care/support)
+- [iOS app](https://apps.apple.com/us/app/boulder-care/id1437606990)
+- [Android app](https://play.google.com/store/apps/details?id=bouldercare.patient)
+
+## Legal
+
+- [Legal index](https://www.boulder.care/legal)
+- [Terms](https://www.boulder.care/legal/terms)
+- [Platform privacy policy](https://www.boulder.care/legal/platform-privacy-policy)
+- [Notice of Privacy Practices (HIPAA)](https://www.boulder.care/legal/npp)
+- [Patient rights](https://www.boulder.care/legal/patient-rights)
+- [Notice of nondiscrimination](https://www.boulder.care/legal/notice-of-nondiscrimination)
+
+## Optional
+
+- [API Evangelist profile](https://raw.githubusercontent.com/api-evangelist/boulder-care/refs/heads/main/apis.yml)
+- Not published by Boulder Care as of 2026-08-08: OpenAPI/Swagger, GraphQL SDL,
+  AsyncAPI, webhooks catalog, MCP server, A2A agent card, any `/.well-known/` document,
+  `llms.txt`, client SDKs, CLI, Postman collection, changelog, status page,
+  `security.txt`, vulnerability disclosure policy or trust center.

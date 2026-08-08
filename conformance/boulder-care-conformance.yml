@@ -1,0 +1,80 @@
+generated: '2026-08-08'
+method: searched
+source: https://www.boulder.care/legal
+summary: 'Boulder Care is a HIPAA-covered telehealth provider and publishes the
+  patient-facing legal notices that status requires. It publishes no security
+  attestation or certification program — no SOC 2 report, no HITRUST, no ISO 27001,
+  no trust center, no security.txt and no vulnerability disclosure policy — and it
+  publishes no API, so none of the API-side interoperability standards apply. This
+  file records what was searched; it does not credit a compliance program that is
+  not published, and no `Compliance` pointer is wired in apis.yml for that reason.'
+standards:
+- id: hipaa
+  conforms: true
+  evidence:
+    url: https://www.boulder.care/legal/npp
+    http_status: 200
+    note: 'Notice of Privacy Practices published in English and Spanish
+      (/legal/aviso-de-practicas-de-privacidad), naming HIPAA four times. This is the
+      notice a covered entity is legally required to post, not a third-party
+      attestation.'
+- id: 42-cfr-part-2
+  conforms: unknown
+  evidence:
+    note: 'Boulder Care treats substance use disorder, which normally brings 42 CFR
+      Part 2 confidentiality obligations, but no Part 2 notice was found as a distinct
+      published document. Not asserted without evidence.'
+- id: soc2
+  conforms: false
+  evidence:
+    probed:
+    - url: https://trust.boulder.care/
+      status: 0
+      note: NXDOMAIN
+    - url: https://www.boulder.care/trust
+      status: 404
+    - url: https://www.boulder.care/security
+      status: 404
+    - url: https://www.boulder.care/compliance
+      status: 404
+    note: No SOC 2, ISO 27001, HITRUST or FedRAMP claim found on any public page.
+- id: iso-27001
+  conforms: false
+  evidence:
+    note: Not claimed anywhere on the public surface.
+- id: hitrust
+  conforms: false
+  evidence:
+    note: Not claimed anywhere on the public surface.
+- id: oauth2
+  conforms: unknown
+  evidence:
+    note: 'No published API and no OAuth discovery document
+      (/.well-known/oauth-authorization-server returns 404 on the website host).
+      The patient app''s GraphQL backend does not advertise its auth model publicly.'
+- id: oidc
+  conforms: false
+  evidence:
+    url: https://www.boulder.care/.well-known/openid-configuration
+    http_status: 404
+- id: fhir
+  conforms: false
+  evidence:
+    note: 'No FHIR endpoint, capability statement or /fhir path was found. Boulder
+      Care is a direct-care telehealth provider rather than an EHR vendor, and
+      publishes no interoperability surface. Medical records are requested via a PDF
+      form on the partners page.'
+- id: rfc9457
+  conforms: false
+  evidence:
+    note: 'The only reachable API surface is GraphQL, which uses the Apollo
+      `errors[].extensions.code` envelope rather than application/problem+json.'
+- id: rfc9116
+  conforms: false
+  evidence:
+    url: https://www.boulder.care/.well-known/security.txt
+    http_status: 404
+- id: rfc8594
+  conforms: false
+  evidence:
+    note: No versioning, deprecation or Sunset-header policy is published.
