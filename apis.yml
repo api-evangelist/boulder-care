@@ -19,7 +19,7 @@ image: https://cdn.prod.website-files.com/61a529f90d9568244b6f6716/621d5fdca5956
 url: https://raw.githubusercontent.com/api-evangelist/boulder-care/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-08'
 modified: '2026-08-08'
 tags:
