@@ -15,6 +15,17 @@ description: 'Boulder Care is a Portland, Oregon telehealth provider founded in 
   Partners. It ships software only as an end-user patient product: there is no
   developer portal, no published API documentation, no SDK and no machine-readable
   specification anywhere on its public surface.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/61a529f90d9568244b6f6716/621d5fdca5956ee9ec3de8c2_logo_primary_light.svg
 url: https://raw.githubusercontent.com/api-evangelist/boulder-care/refs/heads/main/apis.yml
 x-type: company
